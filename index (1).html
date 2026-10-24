@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NJ Essential Products – Curated Essentials for a Superior Life Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f2;--surface:#ffffff;--text:#1f2a24;--muted:#5d6a63;--accent:#1f5c46;--accent-text:#ffffff;--gold:#b8893b;--line:#e6e0d4;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#121815;--surface:#1b2420;--text:#eef1ed;--muted:#a3b0a8;--accent:#4fb78f;--accent-text:#0d1612;--gold:#d9ac5f;--line:#2b3731}
+}
+:root[data-theme="dark"]{--bg:#121815;--surface:#1b2420;--text:#eef1ed;--muted:#a3b0a8;--accent:#4fb78f;--accent-text:#0d1612;--gold:#d9ac5f;--line:#2b3731}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.2;margin:0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:1.25rem;color:var(--text);text-decoration:none}
+.logo span{color:var(--gold)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-text);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.hero{padding:72px 0 64px;text-align:center}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:600}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);margin:14px 0 18px}
+.hero p{max-width:560px;margin:0 auto 28px;color:var(--muted);font-size:1.08rem}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+section{padding:56px 0}
+.title{text-align:center;margin-bottom:32px}
+.title h2{font-size:clamp(1.6rem,4vw,2.2rem)}
+.title p{color:var(--muted);margin:8px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card .ico{font-size:1.8rem}
+.card h3{font-size:1.15rem;margin:10px 0 6px}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.steps{counter-reset:s}
+.steps .card{position:relative;padding-top:44px}
+.steps .card::before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:24px;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#fff;font-weight:600;font-size:.85rem;display:grid;place-items:center}
+.band{background:var(--accent);color:var(--accent-text);border-radius:24px;padding:44px 24px;text-align:center}
+.band h2{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:10px}
+.band p{margin:0 auto 22px;max-width:480px;opacity:.9}
+.band .btn{background:var(--accent-text);color:var(--accent)}
+.herobg{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,#0f3d2e,#1f5c46,#14382b,#7a5a1e,#0f3d2e);background-size:300% 300%;animation:flow 18s ease infinite}
+.herobg .hero{position:relative;z-index:2;padding:110px 0 100px}
+.herobg .eyebrow{color:#e8c476}
+.herobg h1{background:linear-gradient(90deg,#fff,#f1d58f,#fff,#f1d58f);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 8s linear infinite}
+.herobg .hero p{color:rgba(255,255,255,.85)}
+.herobg .btn:not(.ghost){background:linear-gradient(135deg,#f0d189,#b8893b);color:#1a1205;box-shadow:0 8px 24px rgba(232,196,118,.35)}
+.herobg .btn.ghost{color:#fff;border-color:rgba(255,255,255,.45)}
+.btn{transition:transform .25s}.btn:hover{transform:translateY(-3px)}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;animation:drift 14s ease-in-out infinite alternate}
+.o1{width:340px;height:340px;background:#e8c476;top:-90px;left:-70px}
+.o2{width:300px;height:300px;background:#2f9e74;bottom:-80px;right:-50px;animation-delay:-5s}
+.o3{width:220px;height:220px;background:#b8893b;top:35%;left:55%;animation-delay:-9s}
+.dust i{position:absolute;bottom:-12px;left:var(--x);width:6px;height:6px;border-radius:50%;background:rgba(240,209,137,.8);box-shadow:0 0 10px rgba(240,209,137,.9);animation:rise var(--t) linear var(--d) infinite}
+.marq{overflow:hidden;background:var(--gold);color:#1a1205;padding:13px 0;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;white-space:nowrap}
+.marq div{display:inline-block;animation:mq 28s linear infinite}
+.marq span{margin:0 22px}
+.card,.prod{transition:transform .3s,box-shadow .3s,opacity .7s}
+.card:hover,.prod:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(0,0,0,.14)}
+.prod svg{animation:bob 4s ease-in-out infinite}
+.rv{opacity:0;transform:translateY(26px)}.rv.in{opacity:1;transform:none}
+@keyframes flow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes shine{to{background-position:200% center}}
+@keyframes drift{to{transform:translate(70px,50px) scale(1.15)}}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(-640px);opacity:0}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes bob{50%{transform:translateY(-7px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.prod{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 12px;text-align:center}
+.prod svg{width:96px;height:96px;display:block;margin:0 auto 10px}
+.prod h3{font-size:1.05rem;margin:0 0 2px}
+.prod p{margin:0;color:var(--muted);font-size:.85rem}
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#top">NJ <span>Essential</span> Products</a>
+      <a class="btn" href="https://www.whatsapp.com/channel/0029VbDgAb9DDmFV3P5IXi2f" target="_blank" rel="noopener">Follow on WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="herobg">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="dust"><i style="--x:6%;--d:0s;--t:11s"></i><i style="--x:14%;--d:3s;--t:14s"></i><i style="--x:23%;--d:6s;--t:10s"></i><i style="--x:32%;--d:1s;--t:13s"></i><i style="--x:41%;--d:8s;--t:12s"></i><i style="--x:50%;--d:4s;--t:15s"></i><i style="--x:59%;--d:9s;--t:11s"></i><i style="--x:68%;--d:2s;--t:13s"></i><i style="--x:77%;--d:7s;--t:10s"></i><i style="--x:85%;--d:5s;--t:14s"></i><i style="--x:93%;--d:10s;--t:12s"></i></div>
+  <div class="wrap hero">
+    <div class="eyebrow">Welcome to NJ Essential Products</div>
+    <h1>Curated Essentials for a Superior Life Style</h1>
+    <p>Thoughtfully chosen everyday products, picked for quality and value. Follow our channel to see new arrivals and offers as they land.</p>
+    <div class="cta">
+      <a class="btn" href="https://www.whatsapp.com/channel/0029VbDgAb9DDmFV3P5IXi2f" target="_blank" rel="noopener">Join our WhatsApp Channel</a>
+      <a class="btn ghost" href="#products">Explore Products</a>
+    </div>
+  </div>
+  </div>
+  <div class="marq"><div><span>Dates</span>✦<span>Honey</span>✦<span>Olive Oil</span>✦<span>Ghee</span>✦<span>Badam</span>✦<span>Talbeena</span>✦<span>Dates</span>✦<span>Honey</span>✦<span>Olive Oil</span>✦<span>Ghee</span>✦<span>Badam</span>✦<span>Talbeena</span>✦<span>Dates</span>✦<span>Honey</span>✦<span>Olive Oil</span>✦<span>Ghee</span>✦<span>Badam</span>✦<span>Talbeena</span>✦<span>Dates</span>✦<span>Honey</span>✦<span>Olive Oil</span>✦<span>Ghee</span>✦<span>Badam</span>✦<span>Talbeena</span>✦</div></div>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="title"><h2>Our Essentials</h2><p>Pure, wholesome staples for every kitchen.</p></div>
+      <div class="pgrid">
+        <div class="prod"><svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="36" cy="58" rx="15" ry="24" transform="rotate(-25 36 58)" fill="#5a2e17"/><ellipse cx="64" cy="56" rx="15" ry="24" transform="rotate(20 64 56)" fill="#6e3a1d"/><ellipse cx="50" cy="52" rx="14" ry="23" fill="#82481f"/><ellipse cx="45" cy="43" rx="3" ry="9" fill="#a8693a" opacity=".6"/></svg><h3>Dates</h3><p>Soft &amp; naturally sweet</p></div>
+        <div class="prod"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="26" y="12" width="48" height="14" rx="4" fill="#6b4a1e"/><rect x="20" y="24" width="60" height="66" rx="14" fill="#e0a21b"/><rect x="30" y="44" width="40" height="26" rx="6" fill="#fbf1d6"/><path d="M50 49l7 4v8l-7 4-7-4v-8z" fill="#e0a21b"/></svg><h3>Honey</h3><p>Pure &amp; golden</p></div>
+        <div class="prod"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="42" y="8" width="16" height="14" rx="3" fill="#3d4a12"/><path d="M40 22h20v14c14 6 18 16 18 30v14c0 6-4 10-10 10H32c-6 0-10-4-10-10V66c0-14 4-24 18-30z" fill="#7a8a2b"/><rect x="32" y="56" width="36" height="24" rx="5" fill="#f4f1de"/><ellipse cx="50" cy="68" rx="7" ry="5" fill="#5e6d1c"/></svg><h3>Olive Oil</h3><p>Cold &amp; fresh</p></div>
+        <div class="prod"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="24" y="14" width="52" height="14" rx="4" fill="#8a6a2a"/><rect x="18" y="26" width="64" height="64" rx="14" fill="#f2cf6b"/><rect x="28" y="46" width="44" height="26" rx="6" fill="#fffaf0"/><circle cx="50" cy="59" r="7" fill="#f2cf6b"/></svg><h3>Ghee</h3><p>Rich &amp; aromatic</p></div>
+        <div class="prod"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#c58f55"><path d="M0-22C15-14 17 10 0 22C-17 10-15-14 0-22Z" transform="translate(30 56) rotate(-30)"/><path d="M0-22C15-14 17 10 0 22C-17 10-15-14 0-22Z" transform="translate(70 56) rotate(30)"/><path d="M0-24C16-15 18 11 0 24C-18 11-16-15 0-24Z" transform="translate(50 50)" fill="#d6a36a"/></g><path d="M50 34v32" stroke="#a8723d" stroke-width="2" opacity=".5"/></svg><h3>Badam</h3><p>Crunchy almonds</p></div>
+        <div class="prod"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="24" y="14" width="52" height="14" rx="4" fill="#5d4a2e"/><rect x="18" y="26" width="64" height="64" rx="14" fill="#c9b08a"/><rect x="28" y="46" width="44" height="26" rx="6" fill="#fbf5e8"/><path d="M40 66c4-12 6-12 10 0 4-12 6-12 10 0" stroke="#a98c5c" stroke-width="3" fill="none" stroke-linecap="round"/></svg><h3>Talbeena</h3><p>Barley, milk &amp; honey</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="title"><h2>Why shop with us</h2><p>Simple, honest and carefully selected.</p></div>
+      <div class="grid">
+        <div class="card"><div class="ico">✨</div><h3>Curated Selection</h3><p>Every product is hand-picked, so you only see essentials worth having.</p></div>
+        <div class="card"><div class="ico">💎</div><h3>Quality First</h3><p>We choose items that look good, last long and make daily life better.</p></div>
+        <div class="card"><div class="ico">🏷️</div><h3>Fair Prices</h3><p>Good products shouldn’t cost a fortune. Updates and offers are shared on our channel.</p></div>
+        <div class="card"><div class="ico">🤝</div><h3>Personal Service</h3><p>A family-run store. Message us directly and we’ll help you choose.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="title"><h2>How it works</h2><p>From discovery to your doorstep in three steps.</p></div>
+      <div class="grid steps">
+        <div class="card"><h3>Follow the channel</h3><p>Join our WhatsApp Channel to see the latest products and prices.</p></div>
+        <div class="card"><h3>Pick your favourites</h3><p>Spot something you like? Send us a message with the item you want.</p></div>
+        <div class="card"><h3>We take care of the rest</h3><p>We confirm your order and arrange delivery or pickup.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <h2>Never miss a new arrival</h2>
+        <p>New products and special offers are posted first on our WhatsApp Channel.</p>
+        <a class="btn" href="https://www.whatsapp.com/channel/0029VbDgAb9DDmFV3P5IXi2f" target="_blank" rel="noopener">Follow NJ Essential Products</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 NJ Essential Products · Curated Essentials for a Superior Life Style</div>
+</footer>
+<script>
+try{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.card,.prod,.title,.band').forEach(function(el){el.classList.add('rv');io.observe(el)})}catch(e){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+</script>
+</body>
+</html>
